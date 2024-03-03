@@ -16,17 +16,26 @@ document.getElementById("text-form").addEventListener("keypress", (event) => {
         if(event.key == "Enter"){
             event.preventDefault();
             const question = document.getElementById("user-input").value;
+            if(!question) return;
+            document.getElementById("user-input").disabled = true;
             //console.log(fetchData(question));
 
+            const questionNewDiv = document.createElement("div");
+            questionNewDiv.className = "user_question";
             const questionNew = document.createElement("p");
             questionNew.textContent = question;
-            questionNew.className = "user_question";
+            questionNewDiv.appendChild(questionNew);
+
+            const responseNewDiv = document.createElement("div");
             const responseNew = document.createElement("p");
-            responseNew.className = "bot_response";
+            responseNewDiv.className = "bot_response";
             responseNew.textContent = "response";
+            responseNewDiv.appendChild(responseNew);
 
             const parentDiv = document.getElementById("chatlogs-content");
-            parentDiv.appendChild(questionNew);
-            parentDiv.appendChild(responseNew);
+            parentDiv.appendChild(questionNewDiv);
+            parentDiv.appendChild(responseNewDiv);
+            document.getElementById("user-input").value = "";
+            document.getElementById("user-input").disabled = false;
         }
     });

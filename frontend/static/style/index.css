@@ -11,14 +11,41 @@
     height: 32rem;
     width: 48rem;
     overflow-y: scroll;
+    padding: 0.8rem 0;
 }
 
-#chatlogs-content .bot_response{
-
+div.bot_response{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    margin-left: 5%;
 }
 
-#chatlogs-content .user_question{
+div.bot_response p{
+    background-color: green;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    word-wrap: break-word;
+}
 
+div.user_question{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+div.user_question p{
+    background-color: blue;
+    color: white;
+    border-radius: 1rem;
+    word-wrap: break-word;
+    padding: 0.5rem 1rem;
 }
 
 #container h1{
