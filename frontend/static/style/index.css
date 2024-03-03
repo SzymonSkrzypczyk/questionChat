@@ -57,4 +57,7 @@ div.user_question p{
     margin-top:1.2rem;
     margin-left: 15%;
     text-align: center;
+    font-size: 1.3rem;
+    border-radius: 1.5rem;
+    outline: none;
 }

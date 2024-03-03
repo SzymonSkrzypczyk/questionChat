@@ -1,5 +1,6 @@
 from time import perf_counter
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 tokenizer = T5Tokenizer.from_pretrained("google/flan-t5-large", legacy=False)
@@ -8,6 +9,17 @@ MAX_LENGTH_RESULT = 128
 MAX_LENGTH_INPUT = 512
 
 app = FastAPI()
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"]
+)
 
 
 @app.get("/")
