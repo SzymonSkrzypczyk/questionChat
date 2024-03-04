@@ -1,9 +1,10 @@
-import asyncio
+# import asyncio
 from uuid import uuid4
-from flask import Flask, render_template, redirect
-from aiohttp import ClientSession, ClientResponseError
+from flask import Flask, render_template
+# from aiohttp import ClientSession, ClientResponseError
 
 
+"""
 async def get_answer(session: ClientSession, question: str):
     question = question.replace(" ", "_")
     try:
@@ -12,6 +13,7 @@ async def get_answer(session: ClientSession, question: str):
     except Exception:
         return
     return resp
+"""
 
 
 app = Flask(__name__)

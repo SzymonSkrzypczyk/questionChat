@@ -49,7 +49,20 @@ document.getElementById("text-form").addEventListener("keypress", async (event) 
 
             let response = await fetchData(question);
             response = response["answer"];
-            responseNew.textContent = response;
+
+            let i = 0;
+            responseNew.textContent = "";
+            function typingAnimation() {
+              if (i < response.length) {
+                console.log(response.charAt(i));
+                responseNew.textContent += response.charAt(i);
+                i++;
+                setTimeout(typingAnimation, 25);
+              }
+            }
+            typingAnimation();
+
+            // responseNew.textContent = response;
 
             container.scrollTop = container.scrollHeight;
             inputElement.disabled = false;
